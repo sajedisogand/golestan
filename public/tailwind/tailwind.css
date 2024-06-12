@@ -1,0 +1,388 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "gol";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/public/font/IRANSansWeb-Light.eot) format("eot");
+    src: url(/public/font/IRANSansWeb-Light.ttf) format("ttf");
+    src: url(/public/font/IRANSansWeb-Light.woff) format("woff");
+    src: url(/public/font/IRANSansWeb-Light.woff2) format("woff2");
+  }
+
+}
+@layer base {
+  * {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply dark:bg-black--golestan transition-all duration-500 ease-linear;
+  }
+  .header {
+    @apply mobile:w-[100%] mobile:h-[185px] mobile:bg-black--golestan mobile:relative 
+        desktop:w-[100%] desktop:h-[100px] desktop:bg-black--golestan desktop:flex desktop:flex-wrap desktop:flex-row desktop:items-end  desktop:justify-center desktop:pb-[12px] 
+         desktop:sticky desktop:top-0 desktop:z-50 font-['gol'] transition-all duration-300 ease-linear dark:bg-black;
+  }
+
+  .hambergur__open {
+    @apply mobile:w-[70px] mobile:h-[50px] mobile:absolute mobile:bottom-0 mobile:flex mobile:justify-center mobile:items-center 
+    desktop:hidden;
+  }
+  .hambergur__close {
+    @apply desktop:hidden mobile:hidden;
+  }
+  #hambergur__open {
+    @apply mobile:hidden desktop:hidden;
+  }
+  #hambergur__close {
+    @apply mobile:hidden desktop:hidden;
+  }
+  #hambergur__open:checked ~ .main__menu {
+    @apply dark:mobile:bg-black mobile:w-full mobile:bg-black--golestan mobile:absolute mobile:top-[180px] mobile:flex mobile:flex-col mobile:flex-wrap   mobile:gap-y-[20px]  mobile:px-[30px] mobile:pb-[20px] mobile:text-[15px] duration-500 transition-all ease-linear desktop:hidden;
+  }
+  #hambergur__open:checked ~ .hambergur__open {
+    @apply mobile:hidden desktop:hidden;
+  }
+
+  #hambergur__open:checked ~ .hambergur__close {
+    @apply mobile:w-[70px] mobile:h-[50px]  mobile:absolute mobile:bottom-0 mobile:flex mobile:justify-center mobile:items-center desktop:hidden;
+  }
+
+  .main__menu {
+    @apply desktop:h-[60px] desktop:flex desktop:flex-wrap desktop:flex-row desktop:justify-center desktop:items-center desktop:pr-[200px] desktop:box-border desktop:relative mobile:hidden;
+  }
+
+  .first__menu__item {
+    @apply text-white desktop:text-[16px] desktop:pl-[20px];
+  }
+
+  .menu__item {
+    @apply text-gray--golestan desktop:text-[16px] hover:text-white desktop:border-s-2 desktop:border-solid desktop:border-gray-600 desktop:px-[20px] transition-all duration-300 ease-linear;
+  }
+  .main__menu__item {
+    @apply desktop:relative;
+  }
+  .submenu {
+    @apply mobile:hidden desktop:w-[200px]  desktop:pr-[20px] desktop:pl-[10px] desktop:py-[20px] desktop:absolute desktop:right-[10px] desktop:bg-black--golestan dark:desktop:bg-black desktop:hidden;
+  }
+  .sub__sub__menu__link {
+    @apply desktop:text-gray--golestan desktop:text-[16px] desktop:hover:text-white transition-all duration-300 ease-linear;
+  }
+  .main__menu__item:hover > .submenu {
+    @apply desktop:flex desktop:flex-wrap desktop:flex-col desktop:justify-start desktop:items-start desktop:gap-y-[20px] desktop:duration-1000 desktop:transition-all  desktop:delay-1000;
+  }
+
+  .logo {
+    @apply mobile:absolute mobile:top-0 mobile:inset-x-0 mobile:inset-y-0 mobile:my-0 mobile:mx-auto 
+    desktop:absolute desktop:scale-[1.03] desktop:left-[850px] desktop:top-[50px] transition-all duration-300 ease-linear;
+  }
+
+  .main__banner {
+    @apply desktop:w-[100%] desktop:h-[460px] bg-gradient-to-t from-[#DBDBDB] to-white transition-all duration-300 ease-linear;
+  }
+
+  .banner__center {
+    @apply mobile:flex mobile:flex-col mobile:justify-start mobile:items-start mobile:px-[30px] w-full desktop:h-[100%] desktop:flex desktop:flex-row desktop:flex-wrap desktop:justify-center desktop:gap-x-[10px] desktop:items-center desktop:pt-[40px] transition-all duration-300 ease-linear dark:desktop:dark:desktop:bg-[url('../image/dark__banner.jpg')] dark:desktop:bg-no-repeat dark:desktop:bg-fixed dark:desktop:bg-cover dark:desktop:bg-center dark:mobile:bg-darkgray--golestan;
+  }
+  .set__banner {
+    @apply desktop:w-[35%] desktop:h-full;
+  }
+  .banner__left {
+    @apply mobile:pr-[50px] desktop:min-w-[400px] flex flex-row flex-wrap justify-end items-center transition-all duration-500 ease-linear;
+  }
+  .banner__right {
+    @apply desktop:min-w-[500px] flex flex-col  items-start justify-start  box-border gap-y-[30px] desktop:pl-[30px] pt-[30px] transition-all duration-500 ease-linear;
+  }
+  .banner__text__title {
+    @apply text-[30px] font-normal text-red--golestan dark:text-white dark:desktop:text-darkred--golestan font-['gol'];
+  }
+  .banner__text__title2 {
+    @apply text-[20px] text-darkgray--golestan dark:text-black dark:desktop:text-white;
+  }
+  .banner__text__title3 {
+    @apply text-[16px] text-lightgray--golestan text-right font-thin  leading-[33px] mb-[30px] text-justify font-normal font-['gol'] dark:text-black--golestan dark:desktop:text-lightgray--golestan dark:mobile:text-gray-300;
+  }
+  .button {
+    @apply w-[130px] h-[40px] bg-white rounded-[8px] border-[#C8C8C8] border-[2px] text-lightgray--golestan font-['gol'] flex flex-row justify-center items-center text-[14px] hover:bg-red--golestan  dark:hover:bg-black hover:text-white transition-all duration-300 ease-linear dark:bg-gray-300 dark:text-darkgray--golestan dark:hover:text-white dark:hover:border-darkgray--golestan;
+  }
+  .Introduction__golestan {
+    @apply mobile:pt-[50px]   desktop:w-[100%] flex flex-row flex-wrap desktop:justify-center box-border desktop:pt-[80px] desktop:mt-[30px] transition-all duration-300 ease-linear;
+  }
+  .golestan__text__format {
+    @apply mobile:px-[30px] desktop:px-[0] desktop:w-[45%] desktop:min-w-[700px] flex desktop:flex-col flex-wrap desktop:justify-end text-justify transition-all duration-300 ease-linear;
+  }
+  .golestan__text__title {
+    @apply dark:text-white text-[20px] text-red--golestan mb-[10px] font-bold font-['gol'];
+  }
+  .golestan__text__discription {
+    @apply dark:text-gray--golestan text-[16px] text-lightgray--golestan   mb-[50px] leading-[35px] text-justify font-normal font-['gol'] transition-all duration-300 ease-linear;
+  }
+  .counter {
+    @apply mobile:hidden desktop:w-[100%] desktop:h-[290px] desktop:flex desktop:flex-row-reverse desktop:justify-center desktop:items-center desktop:gap-x-[20px] mt-[70px];
+  }
+  .counter__obj {
+    @apply desktop:flex desktop:flex-col desktop:flex-wrap desktop:justify-center desktop:items-center dark:desktop:grayscale dark:desktop:hover:grayscale-0 dark:desktop:hover:brightness-100   dark:desktop:transition-all dark:desktop:duration-500 dark:desktop:ease-linear;
+  }
+
+  .counter__title {
+    @apply dark:text-white desktop:w-[190px] desktop:text-center p-[15px] desktop:text-[#7c7d7e] desktop:border-b-[1px] font-['gol'];
+  }
+  .pr__banner {
+    @apply mobile:mb-[80px] desktop:mb-[0] w-[100%] desktop:h-[500px] desktop:mt-[145px] transition-all duration-300 ease-linear dark:desktop:w-[80%] dark:desktop:rounded-[80px]  dark:desktop:bg-red-500  dark:desktop:mx-auto dark:desktop:relative dark:desktop:overflow-hidden;
+  }
+  .pr__banner__dark__1 {
+    @apply dark:desktop:bg-[url('../image/pr__banner__1.jpg')];
+  }
+  .pr__banner__dark__2 {
+    @apply dark:desktop:bg-[url('../image/pr__banner__2.jpg')];
+  }
+  .pr__banner__dark__3 {
+    @apply dark:desktop:bg-[url('../image/pr__banner__3.jpg')];
+  }
+
+  .gray__line {
+    @apply w-[100%] h-[1.5px] bg-[#e0e0e0]  mb-[20px] dark:desktop:hidden;
+  }
+  .gray__line__ok {
+    @apply desktop:mb-[80px];
+  }
+  .pr__pic {
+    @apply w-[100%] desktop:h-[500px] mt-[30px] dark:desktop:hidden;
+  }
+  .pr__line {
+    @apply dark:desktop:absolute dark:desktop:bottom-[-200px]  w-[100%] h-[20px] bg-[#E9D69F] relative desktop:mb-[80px] dark:bg-white;
+  }
+  .pr__banner:hover > .pr__line {
+    @apply dark:desktop:bottom-[-80px] dark:desktop:transition-all dark:desktop:duration-300 dark:desktop:ease-in dark:desktop:z-40;
+  }
+
+  .pr__banner:hover > .dark__cover {
+    @apply dark:desktop:w-full dark:desktop:h-full dark:desktop:absolute dark:desktop:top-0 dark:desktop:bg-black dark:desktop:transition-all dark:desktop:duration-500 dark:desktop:ease-in dark:desktop:opacity-50;
+  }
+
+  .pr__discription {
+    @apply mobile:w-[100%] mobile:h-[85px] mobile:justify-center mobile:items-start mobile:px-[20px] desktop:w-[293px] desktop:h-[92px] bg-darkred--golestan absolute desktop:bottom-0 desktop:right-[20%] flex flex-col desktop:justify-center desktop:items-start desktop:px-[40px] gap-y-[8px] transition-all duration-300 ease-linear;
+  }
+  .pr__discription__title1 {
+    @apply text-white text-[30px] mobile:font-normal desktop:font-thin font-['gol'];
+  }
+  .pr__discription__title2 {
+    @apply text-white text-[16px] font-thin font-['gol'];
+  }
+  .button__pr {
+    @apply flex flex-row flex-wrap gap-x-[10px];
+  }
+  .img__fix {
+    @apply w-[100%] h-[250px] flex flex-wrap flex-row 
+    justify-center bg-[#E7E8EA]  bg-[url('../image/fix.png')]  bg-fixed  bg-repeat bg-center;
+  }
+
+  .majale__golestan {
+    @apply mobile:pr-[5%] w-[100%] h-[120px] flex flex-row flex-wrap justify-start items-center desktop:pr-[20%];
+  }
+  .majale__center {
+    @apply w-[100%] py-[85px] flex flex-row flex-wrap gap-[15px] bg-[#CDE4B0] items-center justify-center dark:bg-lightgray--golestan;
+  }
+  .slide {
+    @apply mobile:w-[55%] mobile:max-w-[300px]  mobile:gap-y-[40px] desktop:gap-y-0 desktop:w-[62%] desktop:min-w-[980px] flex flex-row flex-wrap justify-between items-center transition-all duration-300 ease-linear;
+  }
+  .majale__slide__item {
+    @apply desktop:w-[32.5%] bg-white desktop:h-[600px] shadow-[0px_5px_10px_0px_rgba(0,0,0,0.4)] transition-all duration-300 ease-linear dark:bg-black--golestan;
+  }
+  .majale__slide__item__top {
+    @apply desktop:w-full desktop:h-[50%];
+  }
+  .majale__discription {
+    @apply w-full desktop:h-[50%] flex flex-col flex-wrap items-start justify-center p-[20px] gap-y-[35px];
+  }
+  .majale__title {
+    @apply text-[20px] text-red--golestan w-full desktop:h-[10%] font-['gol'] font-bold dark:text-white;
+  }
+  .majale__title__2 {
+    @apply desktop:text-[14px] desktop:text-lightgray--golestan desktop:leading-8 desktop:text-justify desktop:w-full desktop:h-[40%] font-['gol'] transition-all duration-300 ease-linear dark:text-gray-300;
+  }
+  .majale__img {
+    @apply hover:opacity-80 h-[50%];
+  }
+
+  .video__center {
+    @apply w-[100%] flex flex-row flex-wrap justify-center items-center transition-all duration-300 ease-linear;
+  }
+  .videos {
+    @apply w-[100%] flex flex-row flex-wrap items-center justify-center py-[60px] transition-all duration-300 ease-linear;
+  }
+  .video__slide__item {
+    @apply desktop:w-[32.5%] h-[450px] shadow-[0px_5px_10px_0px_rgba(0,0,0,0.4)] desktop:flex flex-col flex-wrap dark:bg-darkgray--golestan;
+  }
+  .iframee {
+    @apply absolute top-0 left-0 w-[100%] h-[100%];
+  }
+  .h_iframe-aparat_embed_frame {
+    @apply relative;
+  }
+  .video__slide__item__top {
+    @apply w-full desktop:h-[40%];
+  }
+  .iframee {
+    @apply desktop:absolute desktop:top-0 desktop:left-0 desktop:w-[100%] desktop:h-[100%];
+  }
+  .h_iframe-aparat_embed_frame {
+    @apply desktop:relative;
+  }
+  .video__slide__item__bott {
+    @apply desktop:gap-y-[10px] desktop:flex flex-col flex-wrap justify-start items-start p-[20px] h-[60%] ;
+  }
+
+  .video__title {
+    @apply w-full h-[20%] text-red--golestan font-['gol'] font-bold dark:text-white;
+  }
+  .video__text {
+    @apply w-full h-[50%] text-[14px] text-lightgray--golestan text-justify leading-[25px] font-['gol'] dark:text-gray-300;
+  }
+  .hospital {
+    @apply w-full h-[600px] bg-[#105153] flex flex-col flex-wrap items-center justify-center relative gap-y-[5px] relative transition-all duration-300 ease-linear dark:desktop:mb-[100px];
+  }
+  .hospital__title {
+    @apply text-[#D5ECE1] text-[18px];
+  }
+  .hospital__line {
+    @apply w-[100%] h-[1px] bg-[#07787C];
+  }
+  .hospital__eng {
+    @apply text-[#00d8df] text-[20px];
+  }
+  .eng__bold {
+    @apply text-[30px] text-[#009da2];
+  }
+  .hospital__name {
+    @apply text-gray-400 text-[19px];
+  }
+  .hospital__img {
+    @apply absolute bottom-[-115px] z-10 shadow-[0px_5px_10px_0px_rgba(0,0,0,0.4)];
+  }
+  .active {
+    @apply mobile:mb-[80px];
+  }
+  .social__media {
+    @apply w-full h-[100px] flex flex-row flex-wrap bg-[#EEEFEF] justify-center items-center dark:bg-gray-300;
+  }
+  .social__item__1 {
+    @apply w-[60px] h-[60px] bg-[url('../image/social/icon1.png')] bg-center bg-cover hover:bg-[url('../image/social/icon2.png')] transition-all duration-500;
+  }
+  .social__item__2 {
+    @apply w-[60px] h-[60px] bg-[url('../image/social/icon3.png')] bg-center bg-cover hover:bg-[url('../image/social/icon4.png')] transition-all duration-500;
+  }
+  .social__item__3 {
+    @apply w-[60px] h-[60px] bg-[url('../image/social/icon6.png')] bg-center bg-cover hover:bg-[url('../image/social/icon7.png')] transition-all duration-500;
+  }
+  .social__item__4 {
+    @apply w-[60px] h-[60px] bg-[url('../image/social/icon8.png')] bg-center bg-cover hover:bg-[url('../image/social/icon9.png')] transition-all duration-500;
+  }
+  .social__item__5 {
+    @apply w-[60px] h-[60px] bg-[url('../image/social/icon10.png')] bg-center bg-cover hover:bg-[url('../image/social/icon11.png')] transition-all duration-500;
+  }
+  .social__item__6 {
+    @apply w-[60px] h-[60px] bg-[url('../image/social/icon12.png')] bg-center bg-cover hover:bg-[url('../image/social/icon13.png')] transition-all duration-500;
+  }
+  .red__line {
+    @apply w-full h-[30px] bg-red--golestan;
+  }
+
+  .footer {
+    @apply w-full desktop:h-[490px] bg-black--golestan flex flex-row
+    flex-wrap justify-start items-center p-[20px] transition-all duration-300 ease-linear;
+  }
+  .footer__center {
+    @apply mobile:w-full desktop:flex desktop:flex-row desktop:flex-wrap justify-center items-center  gap-x-[20px] transition-all duration-300 ease-linear bg-black--golestan;
+  }
+  .footer__item {
+    @apply mobile:mb-[20px]  desktop:w-[15%] flex flex-col flex-wrap justify-center items-center transition-all duration-300 ease-linear;
+  }
+
+  .footer__item__title {
+    @apply w-full py-[10px] border-y-2 border-solid border-[#BCBEC0] text-center my-[25px] text-white font-['gol'];
+  }
+  .footer__item__text {
+    @apply mobile:items-center flex flex-col flex-wrap desktop:items-start justify-start desktop:w-full gap-y-[10px] text-[13px] text-[#BCBEC0] font-['gol'];
+  }
+  .company {
+    @apply w-full mt-[70px] text-center text-[#BCBEC0] text-[15px] font-light;
+  }
+  .designer {
+    @apply desktop:text-[#7B7B7B];
+  }
+  .footer__pr {
+    @apply hover:text-white transition-all duration-300 ease-linear;
+  }
+  .back__up {
+    @apply w-[40px] h-[40px] bg-black opacity-40 fixed bottom-5 left-5 flex justify-center items-center rounded-[2px] hover:opacity-100 transition-all duration-300 ease-linear;
+  }
+  .up {
+    @apply w-[18px] h-[18px];
+  }
+  .butt {
+    @apply bg-black w-[40px] h-[40px] fixed bottom-16 left-5 flex justify-center items-center rounded-[2px] hover:opacity-100;
+  }
+}
+@layer components {
+  .EN__logo {
+    @apply mobile:absolute mobile:top-0 mobile:inset-x-0 mobile:inset-y-0 mobile:my-0 mobile:mx-auto 
+    desktop:absolute desktop:scale-[1.03] desktop:right-[850px] desktop:top-[50px];
+  }
+  .main__menu__EN {
+    @apply desktop:pl-[200px];
+  }
+  .first__menu__item__EN {
+    @apply desktop:pr-[20px];
+  }
+  .banner__text__title3__EN {
+    @apply text-[18px];
+  }
+  .banner__right__EN {
+    @apply gap-y-[10px] pt-[70px];
+  }
+  .golestan__text__discription__EN {
+    @apply text-justify;
+  }
+  .pr__discription__EN {
+    @apply desktop:left-[27%];
+  }
+  .pr__discription__title1__EN {
+    @apply font-bold;
+  }
+  .golestan__text__discription__EN {
+    @apply text-justify;
+  }
+  .golestan__text__title__EN {
+    @apply font-thin;
+  }
+  .footer__center__EN {
+    @apply desktop:flex-row-reverse;
+  }
+  .banner__center__EN {
+    @apply dark:desktop:dark:desktop:bg-[url('../image/dark__banner__EN.jpg')] dark:desktop:bg-no-repeat dark:desktop:bg-fixed dark:desktop:bg-cover dark:desktop:bg-center;
+  }
+}
+@layer components {
+  .majale__center__weblog {
+    @apply w-[100%] py-[85px] flex flex-row flex-wrap gap-[15px] bg-[#F7F9FB] items-center justify-center;
+  }
+  .majale__golestan__weblog {
+    @apply h-[160px] ;
+  }
+  .majale__title__weblog {
+    @apply text-[22px] mt-[20px] ;
+  }
+  .slide__weblog {
+    @apply gap-y-[90px];
+  }
+}
