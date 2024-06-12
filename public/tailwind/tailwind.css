@@ -3,23 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: "gol";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(/public/font/IRANSansWeb-Light.eot) format("eot");
-    src: url(/public/font/IRANSansWeb-Light.ttf) format("ttf");
-    src: url(/public/font/IRANSansWeb-Light.woff) format("woff");
-    src: url(/public/font/IRANSansWeb-Light.woff2) format("woff2");
-  }
-
-}
-@layer base {
   * {
     scroll-behavior: smooth;
     box-sizing: border-box;
-    
   }
 }
 
@@ -30,7 +16,7 @@
   .header {
     @apply mobile:w-[100%] mobile:h-[185px] mobile:bg-black--golestan mobile:relative 
         desktop:w-[100%] desktop:h-[100px] desktop:bg-black--golestan desktop:flex desktop:flex-wrap desktop:flex-row desktop:items-end  desktop:justify-center desktop:pb-[12px] 
-         desktop:sticky desktop:top-0 desktop:z-50 font-['gol'] transition-all duration-300 ease-linear dark:bg-black;
+         desktop:sticky desktop:top-0 desktop:z-50 transition-all duration-300 ease-linear dark:bg-black;
   }
 
   .hambergur__open {
@@ -103,16 +89,16 @@
     @apply desktop:min-w-[500px] flex flex-col  items-start justify-start  box-border gap-y-[30px] desktop:pl-[30px] pt-[30px] transition-all duration-500 ease-linear;
   }
   .banner__text__title {
-    @apply text-[30px] font-normal text-red--golestan dark:text-white dark:desktop:text-darkred--golestan font-['gol'];
+    @apply text-[30px] font-normal text-red--golestan dark:text-white dark:desktop:text-darkred--golestan;
   }
   .banner__text__title2 {
     @apply text-[20px] text-darkgray--golestan dark:text-black dark:desktop:text-white;
   }
   .banner__text__title3 {
-    @apply text-[16px] text-lightgray--golestan text-right font-thin  leading-[33px] mb-[30px] text-justify font-normal font-['gol'] dark:text-black--golestan dark:desktop:text-lightgray--golestan dark:mobile:text-gray-300;
+    @apply text-[16px] text-lightgray--golestan text-right font-thin  leading-[33px] mb-[30px] text-justify font-normal  dark:text-black--golestan dark:desktop:text-lightgray--golestan dark:mobile:text-gray-300;
   }
   .button {
-    @apply w-[130px] h-[40px] bg-white rounded-[8px] border-[#C8C8C8] border-[2px] text-lightgray--golestan font-['gol'] flex flex-row justify-center items-center text-[14px] hover:bg-red--golestan  dark:hover:bg-black hover:text-white transition-all duration-300 ease-linear dark:bg-gray-300 dark:text-darkgray--golestan dark:hover:text-white dark:hover:border-darkgray--golestan;
+    @apply w-[130px] h-[40px] bg-white rounded-[8px] border-[#C8C8C8] border-[2px] text-lightgray--golestan  flex flex-row justify-center items-center text-[14px] hover:bg-red--golestan  dark:hover:bg-black hover:text-white transition-all duration-300 ease-linear dark:bg-gray-300 dark:text-darkgray--golestan dark:hover:text-white dark:hover:border-darkgray--golestan;
   }
   .Introduction__golestan {
     @apply mobile:pt-[50px]   desktop:w-[100%] flex flex-row flex-wrap desktop:justify-center box-border desktop:pt-[80px] desktop:mt-[30px] transition-all duration-300 ease-linear;
@@ -121,10 +107,10 @@
     @apply mobile:px-[30px] desktop:px-[0] desktop:w-[45%] desktop:min-w-[700px] flex desktop:flex-col flex-wrap desktop:justify-end text-justify transition-all duration-300 ease-linear;
   }
   .golestan__text__title {
-    @apply dark:text-white text-[20px] text-red--golestan mb-[10px] font-bold font-['gol'];
+    @apply dark:text-white text-[20px] text-red--golestan mb-[10px] font-bold;
   }
   .golestan__text__discription {
-    @apply dark:text-gray--golestan text-[16px] text-lightgray--golestan   mb-[50px] leading-[35px] text-justify font-normal font-['gol'] transition-all duration-300 ease-linear;
+    @apply dark:text-gray--golestan text-[16px] text-lightgray--golestan   mb-[50px] leading-[35px] text-justify font-normal  transition-all duration-300 ease-linear;
   }
   .counter {
     @apply mobile:hidden desktop:w-[100%] desktop:h-[290px] desktop:flex desktop:flex-row-reverse desktop:justify-center desktop:items-center desktop:gap-x-[20px] mt-[70px];
@@ -134,7 +120,7 @@
   }
 
   .counter__title {
-    @apply dark:text-white desktop:w-[190px] desktop:text-center p-[15px] desktop:text-[#7c7d7e] desktop:border-b-[1px] font-['gol'];
+    @apply dark:text-white desktop:w-[190px] desktop:text-center p-[15px] desktop:text-[#7c7d7e] desktop:border-b-[1px];
   }
   .pr__banner {
     @apply mobile:mb-[80px] desktop:mb-[0] w-[100%] desktop:h-[500px] desktop:mt-[145px] transition-all duration-300 ease-linear dark:desktop:w-[80%] dark:desktop:rounded-[80px]  dark:desktop:bg-red-500  dark:desktop:mx-auto dark:desktop:relative dark:desktop:overflow-hidden;
@@ -173,10 +159,10 @@
     @apply mobile:w-[100%] mobile:h-[85px] mobile:justify-center mobile:items-start mobile:px-[20px] desktop:w-[293px] desktop:h-[92px] bg-darkred--golestan absolute desktop:bottom-0 desktop:right-[20%] flex flex-col desktop:justify-center desktop:items-start desktop:px-[40px] gap-y-[8px] transition-all duration-300 ease-linear;
   }
   .pr__discription__title1 {
-    @apply text-white text-[30px] mobile:font-normal desktop:font-thin font-['gol'];
+    @apply text-white text-[30px] mobile:font-normal desktop:font-thin;
   }
   .pr__discription__title2 {
-    @apply text-white text-[16px] font-thin font-['gol'];
+    @apply text-white text-[16px] font-thin;
   }
   .button__pr {
     @apply flex flex-row flex-wrap gap-x-[10px];
@@ -205,10 +191,10 @@
     @apply w-full desktop:h-[50%] flex flex-col flex-wrap items-start justify-center p-[20px] gap-y-[35px];
   }
   .majale__title {
-    @apply text-[20px] text-red--golestan w-full desktop:h-[10%] font-['gol'] font-bold dark:text-white;
+    @apply text-[20px] text-red--golestan w-full desktop:h-[10%]  font-bold dark:text-white;
   }
   .majale__title__2 {
-    @apply desktop:text-[14px] desktop:text-lightgray--golestan desktop:leading-8 desktop:text-justify desktop:w-full desktop:h-[40%] font-['gol'] transition-all duration-300 ease-linear dark:text-gray-300;
+    @apply desktop:text-[14px] desktop:text-lightgray--golestan desktop:leading-8 desktop:text-justify desktop:w-full desktop:h-[40%]  transition-all duration-300 ease-linear dark:text-gray-300;
   }
   .majale__img {
     @apply hover:opacity-80 h-[50%];
@@ -239,14 +225,14 @@
     @apply desktop:relative;
   }
   .video__slide__item__bott {
-    @apply desktop:gap-y-[10px] desktop:flex flex-col flex-wrap justify-start items-start p-[20px] h-[60%] ;
+    @apply desktop:gap-y-[10px] desktop:flex flex-col flex-wrap justify-start items-start p-[20px] h-[60%];
   }
 
   .video__title {
-    @apply w-full h-[20%] text-red--golestan font-['gol'] font-bold dark:text-white;
+    @apply w-full h-[20%] text-red--golestan  font-bold dark:text-white;
   }
   .video__text {
-    @apply w-full h-[50%] text-[14px] text-lightgray--golestan text-justify leading-[25px] font-['gol'] dark:text-gray-300;
+    @apply w-full h-[50%] text-[14px] text-lightgray--golestan text-justify leading-[25px]  dark:text-gray-300;
   }
   .hospital {
     @apply w-full h-[600px] bg-[#105153] flex flex-col flex-wrap items-center justify-center relative gap-y-[5px] relative transition-all duration-300 ease-linear dark:desktop:mb-[100px];
@@ -309,10 +295,10 @@
   }
 
   .footer__item__title {
-    @apply w-full py-[10px] border-y-2 border-solid border-[#BCBEC0] text-center my-[25px] text-white font-['gol'];
+    @apply w-full py-[10px] border-y-2 border-solid border-[#BCBEC0] text-center my-[25px] text-white;
   }
   .footer__item__text {
-    @apply mobile:items-center flex flex-col flex-wrap desktop:items-start justify-start desktop:w-full gap-y-[10px] text-[13px] text-[#BCBEC0] font-['gol'];
+    @apply mobile:items-center flex flex-col flex-wrap desktop:items-start justify-start desktop:w-full gap-y-[10px] text-[13px] text-[#BCBEC0];
   }
   .company {
     @apply w-full mt-[70px] text-center text-[#BCBEC0] text-[15px] font-light;
@@ -377,10 +363,10 @@
     @apply w-[100%] py-[85px] flex flex-row flex-wrap gap-[15px] bg-[#F7F9FB] items-center justify-center;
   }
   .majale__golestan__weblog {
-    @apply h-[160px] ;
+    @apply h-[160px];
   }
   .majale__title__weblog {
-    @apply text-[22px] mt-[20px] ;
+    @apply text-[22px] mt-[20px];
   }
   .slide__weblog {
     @apply gap-y-[90px];
